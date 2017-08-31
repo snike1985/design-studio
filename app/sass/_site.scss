@@ -1,6 +1,17 @@
 .site {
-  @include justify;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 320px;
+  background-color: #F5F5F5;
+  @include main-font();
 
+  &__header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 137px;
+  }
 }
 @media (min-width: $phone-landscape) {
   .site {

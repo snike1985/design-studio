@@ -1,0 +1,48 @@
+/*---------- social ----------*/
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .social {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .social {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .social {
+
+  }
+}
+@media (min-width: $desktop) {
+  .social {
+
+    &__item {
+      margin: 0 10px;
+
+      svg {
+        width: 62px;
+        height: 62px;
+      }
+    }
+  }
+}
+/*---------- /social ---------*/
+
