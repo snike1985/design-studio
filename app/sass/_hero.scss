@@ -1,0 +1,132 @@
+/*---------- hero ----------*/
+.hero {
+  position: relative;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 320px;
+    padding: 70px 50px 50px 70px;
+
+    .logo { margin-bottom: 10px }
+  }
+
+  &__layout {
+    overflow: hidden;
+    position: relative;
+    height: 320px;
+    background-color: #fff;
+
+    &:before {
+      position: absolute;
+      top: calc(100% - 687px);
+      left: 3px;
+      color: #F8F8F8;
+      font-size: 732px;
+      line-height: 859px;
+      letter-spacing: 22px;
+      content: attr(data-text);
+      @include title();
+    }
+  }
+
+  &__gadgets {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 90px;
+    color: #3F4551;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    @include subtitle-medium();
+  }
+
+  &__list {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 114px;
+    color: #3F4551;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    @include subtitle-medium();
+
+    li { margin-bottom: 10px }
+  }
+
+  &__scroll-down {
+    position: absolute;
+    bottom: 4%;
+    left: 43%;
+    transform-origin: left;
+    transform: rotate(270deg);
+    color: #3F4551;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include subtitle-medium();
+  }
+}
+@media (min-width: $phone-landscape) {
+  .hero {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .hero {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .hero {
+
+  }
+}
+@media (min-width: $desktop) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    height: 737px;
+
+    &__description {
+      width: 51%;
+      height: auto;
+      padding: 200px 138px 88px;
+
+      .logo {
+        margin-bottom: 30px;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    }
+
+    &__layout {
+      width: 49%;
+      height: auto;
+    }
+
+    &__gadgets {
+      top: 226px;
+      left: 66px;
+    }
+
+    &__list {
+      top: 322px;
+      left: calc(50% + 3px);
+
+      li { margin-bottom: 20px }
+    }
+
+    &__scroll-down {
+      bottom: 65px;
+      left: calc(50% - 2px);
+    }
+  }
+}
+/*---------- /hero ---------*/
+

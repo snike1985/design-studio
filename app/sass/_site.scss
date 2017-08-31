@@ -6,11 +6,31 @@
   @include main-font();
 
   &__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    height: 137px;
+    height: 70px;
+    z-index: 2;
+    padding: 10px 20px;
+  }
+
+  &__create-by {
+    position: absolute;
+    top: 70vh;
+    left: 10px;
+    z-index: 1;
+    transform-origin: left;
+    transform: rotate(270deg);
+    color: #3F4551;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include subtitle-medium();
   }
 }
 @media (min-width: $phone-landscape) {
@@ -31,6 +51,15 @@
 @media (min-width: $desktop) {
   .site {
 
+    &__header {
+      height: 154px;
+      padding: 20px 45px;
+    }
+
+    &__create-by {
+      top: 97.5vh;
+      left: 57px;
+    }
   }
 }
 

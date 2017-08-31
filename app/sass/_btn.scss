@@ -1,38 +1,78 @@
+/*---------- btn ----------*/
 .btn {
-  border: none;
-  height: 50px;
-  padding: 0 10px;
-  color: $btn-color;
-  display: flex;
-  text-align: left;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  background: $btn-back;
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  padding: 6px 12px 4px;
+  border: 2px solid #0200FF;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  background-color: #0200FF;
+  transform: translatez(0);
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #293A5A;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .7s cubic-bezier(.19,1,.22,1);
+    content: '';
+  }
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 20px;
+    @include subtitle-bold();
+  }
+
+  &.btn_transparent {
+    background-color: transparent;
+
+    span {
+      color: #0200FF;
+    }
+  }
 
   &:hover {
-    background: $btn-back-hover;
-  }
 
-  &:active {
-    color: $btn-color-active;
-    background: $btn-back-active;
-  }
-
-  &_2 {
-    width: 150px;
-    height: 40px;
-    background: $btn-2-back;
-
-    &:hover {
-      background: $btn-2-back-hover;
-    }
-
-    &:active {
-      color: $btn-2-color-active;
-      background: $btn-2-back-active;
+    &:before {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
-
 }
+@media (min-width: $phone-landscape) {
+  .btn {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .btn {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .btn {
+
+  }
+}
+@media (min-width: $desktop) {
+  .btn {
+    padding: 10px 23px 8px;
+
+    span {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+}
+/*---------- /btn ---------*/

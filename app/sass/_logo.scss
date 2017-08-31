@@ -1,0 +1,34 @@
+/*---------- logo ----------*/
+.logo {
+  color: #3F4551;
+  font-size: 24px;
+  line-height: 27px;
+  @include subtitle-bold();
+
+  strong {
+    color: #0200FF;
+    font-weight: 400;
+  }
+}
+@media (min-width: $phone-landscape) {
+  .logo {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .logo {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .logo {
+
+  }
+}
+@media (min-width: $desktop) {
+  .logo {
+
+  }
+}
+/*---------- /logo ---------*/
+

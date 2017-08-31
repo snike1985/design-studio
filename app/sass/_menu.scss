@@ -3,8 +3,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 100%;
+  z-index: 1;
+  transition: width .3s linear .3s;
 
   &:before {
     position: absolute;
@@ -22,6 +24,8 @@
   }
 
   &.open {
+    width: 100%;
+    transition-delay: 0s;
 
     &:before {
       transform: translate(0);
@@ -130,11 +134,12 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
-    min-width: 300px;
+    min-width: 280px;
     max-width: 668px;
     height: 100%;
     z-index: 2;
@@ -144,18 +149,7 @@
     transform: translate(-100%, 0);
   }
 
-  &__head {
-    padding: 0 0 20px 40px;
-    color: #3F4551;
-    font-size: 20px;
-    line-height: 27px;
-    @include subtitle-bold();
-
-    strong {
-      color: #0200FF;
-      font-weight: 400;
-    }
-  }
+  &__head { padding: 0 0 20px 40px }
 
   &__links {
     display: flex;
@@ -240,16 +234,22 @@
       }
     }
 
-    &__wrap { padding: 55px 60px }
+    &__wrap { padding: 57px 60px 51px }
 
-    &__head { padding: 0 0 40px 80px }
+    &__head { padding: 0 0 37px 80px }
 
     &__links {
 
       &-item {
+        margin-bottom: 10px;
         font-size: 48px;
         line-height: 67px;
       }
+    }
+
+    .social {
+
+      &__item { margin: 0 19px 0 0 }
     }
   }
 }
