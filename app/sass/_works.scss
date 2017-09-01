@@ -1,0 +1,134 @@
+/*---------- works ----------*/
+.works {
+  position: relative;
+  max-width: 935px;
+  margin: 0 auto 30px;
+  padding: 30px;
+  z-index: 1;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-bottom: 30px;
+    color: #3F4551;
+    font-size: 5vh;
+    line-height: 9vh;
+    text-transform: uppercase;
+    @include title();
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    overflow: hidden;
+    position: relative;
+    width: calc(100vw - 60px);
+    height: calc(100vw - 60px);
+    max-width: 440px;
+    max-height: 440px;
+    margin-bottom: 20px;
+    z-index: 1;
+    background-color: #fff;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      content: '';
+      background-color: rgba(2,0,255,0.7);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translate(-100%, 0);
+      transition-delay: .2s;
+      backface-visibility: hidden;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: 2;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translate(-100%, 0);
+    }
+
+    &.is-show {
+
+      &:before {
+        transform: translate(0);
+        transition-delay: 0s;
+      }
+
+      img {
+        transform: translate(0);
+        transition-delay: .2s;
+      }
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .works {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .works {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .works {
+
+  }
+}
+@media (min-width: $desktop) {
+  .works {
+    margin: 0 auto 100px;
+    padding: 100px 0 0 0;
+    text-align: left;
+
+    &__title {
+      position: absolute;
+      top: 178px;
+      right: -110px;
+      margin: 0;
+      font-size: 67px;
+      line-height: 79px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    &__item {
+      overflow: hidden;
+      position: relative;
+      top: -32px;
+      margin-bottom: 55px;
+
+      &:nth-child(even) {
+        top: 55px;
+      }
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 0;
+      right: 493px;
+    }
+  }
+}
+/*---------- /works ---------*/
+

@@ -1,65 +1,103 @@
+/*---------- tabs ----------*/
 .tabs {
-
-}
-.tabs_animated1 {
-  transition: min-height 0.3s linear;
-}
-.tabs_animated2 {
-  transition: min-height 0.3s linear;
-}
-.tabs dl {
   position: relative;
-}
-.tabs dt {
-  cursor: pointer;
-}
-.tabs dt.active + dd {
-  opacity: 1;
-  visibility: visible;
-}
-.tabs dd {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-}
-.tabs_animated1 dd {
-  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
-}
-.tabs.tabs_animated1 .tabs__content {
-  transform-origin: 50% 0 0px;
-  transform: perspective(870px) rotateY(0deg) rotateX(-90deg);
-  transition: transform 0.3s ease;
-}
-.tabs.tabs_animated1 dt.active + dd .tabs__content {
-  transform: perspective(870px) rotateY(0deg) rotateX(0deg);
-}
-.tabs.tabs_animated2 .tabs__content {
-  opacity: 0;
-  transition: opacity 0.3s ease 0.1s;
-}
-.tabs.tabs_animated2 dt.active + dd .tabs__content {
-  opacity: 1;
-}
+  z-index: 1;
 
-@media (min-width: $tablet-landscape) {
-  .tabs dl dt{
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 28px 20px 0;
+  &__controls {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+
+    &:before {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border-radius: 100px;
+      background-color: #FFFFFF;
+      pointer-events: none;
+      content: '';
+    }
+
+    &-slider {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 1;
+      border-radius: 100px;
+      background-color: #0200FF;
+      transition: left .15s linear, width .15s linear;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        padding: 1px 13px 0;
+        z-index: 2;
+        color: #B0B1B5;
+        font-size: 14px;
+        line-height: 23px;
+        text-transform: uppercase;
+        transition: color .15s linear;
+        @include subtitle-bold();
+      }
+
+      &.active span {
+        color: #fff;
+      }
+    }
   }
-  .tabs dl dd {
-    position: absolute;
-    top: 35px;
-    left: 0;
-  }
-  .tabs.tabs_animated1 .tabs__content {
-    transform: translateX(-120%);
-    transition: transform 0.3s ease 0.1s;
-  }
-  .tabs dt.active + dd .tabs__content {
-    transform: translateX(0);
-  }
-  .tabs.tabs_animated1 dt.active + dd .tabs__content {
-    transform: translateX(0);
+
+  &__content {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    transition: height .3s ease-in-out;
+
+    &-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+
+      &.active {
+        opacity: 1;
+        pointer-events: fill;
+      }
+    }
   }
 }
+@media (min-width: $phone-landscape) {
+  .tabs {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .tabs {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .tabs {
+
+  }
+}
+@media (min-width: $desktop) {
+  .tabs {
+
+  }
+}
+/*---------- /tabs ---------*/
+

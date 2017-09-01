@@ -1,0 +1,152 @@
+/*---------- doing ----------*/
+.doing {
+  position: relative;
+  margin-bottom: 50px;
+
+  &__head {
+    max-width: 1188px;
+    margin: 0 auto;
+    padding: 0 50px;
+    text-align: center;
+
+    &-title {
+      min-height: 200px;
+      padding: 23px 0;
+    }
+
+    &-list {
+      padding: 23px 0;
+
+      ul {
+        color: #3F4551;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include subtitle-medium();
+
+        li {
+          margin-bottom: 10px;
+
+          span { display: block }
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 459px;
+    left: 20px;
+    transform: rotate(270deg);
+    transform-origin: left;
+    color: #3F4551;
+    font-size: 23px;
+    line-height: 27px;
+    white-space: nowrap;
+    @include subtitle-bold();
+  }
+
+  &__content {
+    position: relative;
+    max-width: 611px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #0200FF;
+    text-align: center;
+
+    .doing__subtitle {
+      top: 162px;
+      left: 15px;
+      color: #fff;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      font-size: 22px;
+      line-height: 33px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      @include subtitle-medium();
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #FFFFFF;
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: .1px;
+    }
+
+    .btn { margin-top: 10px }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .doing {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .doing {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .doing {
+
+  }
+}
+@media (min-width: $desktop) {
+  .doing {
+    position: relative;
+    margin-bottom: 113px;
+
+    &__head {
+      display: flex;
+      margin-bottom: 75px;
+      text-align: left;
+
+      &-title {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        min-height: 522px;
+      }
+
+      &-list { width: 50% }
+    }
+
+    &__subtitle {
+      top: 459px;
+      left: 55px;
+    }
+
+    &__content {
+      min-height: 569px;
+      padding: 87px 85px;
+      text-align: left;
+
+      .doing__subtitle {
+        top: 136px;
+        left: -39px;
+        color: #3F4551;
+      }
+
+      h2 {
+        margin-bottom: 19px;
+        font-size: 28px;
+        line-height: 37px;
+      }
+
+      p {
+        max-width: 300px;
+        margin-bottom: 24px;
+      }
+
+      .btn { margin-top: 19px }
+    }
+  }
+}
+/*---------- /doing ---------*/
+

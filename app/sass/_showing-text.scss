@@ -2,7 +2,7 @@
 .showing-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 33px;
   @include title();
 
@@ -27,7 +27,7 @@
         opacity: 0;
       }
 
-      span { top: 0 }
+      span { transform: translate(0) }
     }
   }
 
@@ -39,7 +39,6 @@
     font-size: 5vh;
     line-height: 9vh;
     text-transform: uppercase;
-    transition: color .3s ease-in-out;
 
     &:after {
       position: absolute;
@@ -53,12 +52,10 @@
       content: '';
     }
 
-    &:hover { color: #0200FF }
-
     span {
       position: relative;
-      top: 1em;
-      transition: top .3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translate(0, 100%);
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 }
@@ -79,6 +76,7 @@
 }
 @media (min-width: $desktop) {
   .showing-text {
+    align-items: flex-start;
 
     &__item {
       font-size: 66px;
