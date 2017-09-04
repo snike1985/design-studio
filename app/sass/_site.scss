@@ -1,11 +1,24 @@
 .site {
   overflow: hidden;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   min-height: 100vh;
   min-width: 320px;
+  background-color: #F5F5F5;
   @include main-font();
 
+  &.site_main {
+
+    .site__header {
+      justify-content: flex-end;
+
+      .logo {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+  }
   &__header {
     display: flex;
     align-items: center;
@@ -15,8 +28,20 @@
     right: 0;
     left: 0;
     height: 70px;
+    z-index: 3;
+    padding: 10px 20px 10px 100px;
+    pointer-events: none;
+
+    .logo { display: none }
+
+    > * {
+      pointer-events: fill;
+    }
+  }
+
+  &__content {
+    position: relative;
     z-index: 2;
-    padding: 10px 20px;
   }
 
   &__create-by {
@@ -54,7 +79,10 @@
 
     &__header {
       height: 154px;
-      padding: 20px 45px;
+      justify-content: space-between;
+      padding: 20px 45px 20px 135px;
+
+      .logo { display: block }
     }
 
     &__create-by {

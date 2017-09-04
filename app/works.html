@@ -10,21 +10,21 @@
     <title>Title</title>
 
     <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/works-page.css">
 
 </head>
 <body>
 
     <!-- site -->
-    <div class="site site_main">
+    <div class="site">
 
         <!-- site__header -->
         <header class="site__header">
 
             <!-- logo -->
-            <div class="logo">
+            <a href="#" class="logo">
                 designstudio<strong>.AG</strong>
-            </div>
+            </a>
             <!-- /logo -->
 
             <!-- menu -->
@@ -224,85 +224,19 @@
         <!-- site__content -->
         <main class="site__content">
 
-            <!-- site__create-by -->
-            <span class="site__create-by">by Artem Gorodetsky</span>
-            <!-- /site__create-by -->
-
-            <!-- hero -->
-            <section class="hero">
-
-                <!-- hero__description -->
-                <div class="hero__description">
-
-                    <!-- logo -->
-                    <div class="logo">
-                        designstudio<strong>.AG</strong>
-                    </div>
-                    <!-- /logo -->
-
-                    <!-- showing-text -->
-                    <div class="showing-text">
-
-                        <!-- showing-text__item -->
-                        <div class="showing-text__item">
-                            <span>UX&VISUAL</span>
-                        </div>
-                        <!-- /showing-text__item -->
-
-                        <!-- showing-text__item -->
-                        <div class="showing-text__item">
-                            <span>DESIGN</span>
-                        </div>
-                        <!-- /showing-text__item -->
-
-                        <!-- showing-text__item -->
-                        <div class="showing-text__item">
-                            <span>LAB</span>
-                        </div>
-                        <!-- /showing-text__item -->
-
-                    </div>
-                    <!-- /showing-text -->
-
-                    <a href="#" class="btn"><span>SEE OUR WORK</span></a>
-
-                </div>
-                <!-- /hero__description -->
-
-                <!-- hero__layout -->
-                <div class="hero__layout" data-text="AG">
-
-                    <!-- hero__gadgets -->
-                    <ul class="hero__gadgets">
-                        <li>iPhone</li>
-                        <li>iPad</li>
-                        <li>Android</li>
-                        <li>Android TV</li>
-                    </ul>
-                    <!-- /hero__gadgets -->
-
-                    <!-- hero__list -->
-                    <ul class="hero__list">
-                        <li>USER EXPERIENCE
-                            ENGINEERING</li>
-                        <li>USER INTERFACE DESIGN</li>
-                        <li>WEB AND MOBILE APP DESIGN</li>
-                        <li>VISUAL DIGITAL DESGN</li>
-                    </ul>
-                    <!-- /hero__list -->
-
-                </div>
-                <!-- /hero__layout -->
-
-                <!-- hero__scroll-down -->
-                <span class="hero__scroll-down">SCROLL DOWN</span>
-                <!-- /hero__scroll-down -->
-
-            </section>
-            <!-- /hero -->
-
             <!-- works -->
-            <section class="works">
+            <section class="works works_isotope">
+
+                <!-- works__filter -->
+                <div class="works__filter">
+                    <div class="works__filter-item" data-filter="*">all</div>
+                    <div class="works__filter-item" data-filter=".ux">ux</div>
+                    <div class="works__filter-item" data-filter=".ui">ui</div>
+                    <div class="works__filter-item" data-filter=".visual">visual</div>
+                    <div class="works__filter-item" data-filter=".ios">ios</div>
+                    <div class="works__filter-item" data-filter=".android">android</div>
+                </div>
+                <!-- /works__filter -->
 
                 <!-- works__title -->
                 <strong class="works__title">Work</strong>
@@ -312,26 +246,320 @@
                 <div class="works__list">
 
                     <!-- works__item -->
-                    <div class="works__item show">
+                    <div class="works__item show ui">
                         <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+                            
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
                     </div>
                     <!-- /works__item -->
 
                     <!-- works__item -->
-                    <div class="works__item show">
+                    <div class="works__item show ui">
                         <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>GATEKEEPER</li>
+                                <li>ANDROID/IOS APP</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
                     </div>
                     <!-- /works__item -->
 
                     <!-- works__item -->
-                    <div class="works__item show">
+                    <div class="works__item show ui ux">
                         <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UX</li>
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
                     </div>
                     <!-- /works__item -->
 
                     <!-- works__item -->
-                    <div class="works__item show">
+                    <div class="works__item show ui android">
                         <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UI</li>
+                                <li>Android</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ios">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>GATEKEEPER</li>
+                                <li>ANDROID/IOS APP</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>IOS</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ui visual">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>Visual</li>
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ios">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>IOS</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show android">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>GATEKEEPER</li>
+                                <li>ANDROID/IOS APP</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>android</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ui ux">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UX</li>
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ui android">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>UI</li>
+                                <li>Android</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ios">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>GATEKEEPER</li>
+                                <li>ANDROID/IOS APP</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>IOS</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
+                    </div>
+                    <!-- /works__item -->
+
+                    <!-- works__item -->
+                    <div class="works__item show ui visual">
+                        <img src="pic/pic.jpg" alt="">
+
+                        <!-- works__item-footer -->
+                        <div class="works__item-footer">
+
+                            <!-- works__item-text -->
+                            <ul class="works__item-text">
+                                <li>MONTANA CAPITAL</li>
+                                <li>AUTO LOAN WEB PORTAL</li>
+                            </ul>
+                            <!-- /works__item-text -->
+
+                            <!-- works__item-data -->
+                            <ul class="works__item-data">
+                                <li>Visual</li>
+                                <li>UI</li>
+                            </ul>
+                            <!-- /works__item-data -->
+
+                        </div>
+                        <!-- /works__item-footer -->
+
                     </div>
                     <!-- /works__item -->
 
@@ -342,284 +570,6 @@
 
             </section>
             <!-- /works -->
-
-            <!-- doing -->
-            <section class="doing">
-
-                <!-- doing__subtitle -->
-                <strong class="doing__subtitle">We are frequently being asked</strong>
-                <!-- /doing__subtitle -->
-
-                <!-- doing__head -->
-                <div class="doing__head">
-
-                    <!-- doing__head-title -->
-                    <div class="doing__head-title">
-
-                        <!-- showing-text -->
-                        <div class="showing-text">
-
-                            <!-- showing-text__item -->
-                            <div class="showing-text__item">
-                                <span>What</span>
-                            </div>
-                            <!-- /showing-text__item -->
-
-                            <!-- showing-text__item -->
-                            <div class="showing-text__item">
-                                <span>We do,</span>
-                            </div>
-                            <!-- /showing-text__item -->
-
-                            <!-- showing-text__item -->
-                            <div class="showing-text__item">
-                                <span>anyway?</span>
-                            </div>
-                            <!-- /showing-text__item -->
-
-                        </div>
-                        <!-- /showing-text -->
-
-                    </div>
-                    <!-- /doing__head-title -->
-
-                    <!-- doing__head-list -->
-                    <div class="doing__head-list">
-                        <ul>
-                            <li><span>USER EXPERIENCE</span>
-                                ANALYTICS & ENGINEERING</li>
-                            <li><span>USER INTERFACE</span> DESIGN</li>
-                            <li><span>WEB AND MOBILE</span> APP DESIGN</li>
-                            <li><span>VISUAL DIGITAL</span> DESIGN</li>
-                            <li><span>Website</span>
-                                Design</li>
-                            <li><span>iOs/Android</span>
-                                App Design</li>
-                            <li><span>Wireframing</span>
-                                and Prototyping</li>
-                            <li><span>Digital Collateral</span>
-                                Design</li>
-                        </ul>
-                    </div>
-                    <!-- /doing__head-list -->
-
-                </div>
-                <!-- /doing__head -->
-
-                <!-- doing__content -->
-                <div class="doing__content">
-
-                    <!-- doing__subtitle -->
-                    <strong class="doing__subtitle">Our Approach</strong>
-                    <!-- /doing__subtitle -->
-
-                    <h2>WE TAKE DESIGN SERIOUSLY</h2>
-
-                    <p>Whether you are running a successful business or launching a startup, design is essential to onboard
-                        clients and reach your business goals.</p>
-
-                    <p>On a highly-competitive market design and perfect user experience will play the main role in client
-                        aquisition and success of a business</p>
-
-                    <a href="#" class="btn btn_2"><span>REACH OUT TO US</span></a>
-
-                </div>
-                <!-- /doing__content -->
-
-            </section>
-            <!-- /doing -->
-
-            <!-- clients -->
-            <section class="clients">
-
-                <!-- clients__map -->
-                <div class="clients__map">
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <span class="clients__map-point show"></span>
-                    <img src="img/dotted-map@2x.png" srcset="img/dotted-map@2x.png 2x, img/dotted-map@3x.png 3x" alt="map">
-                </div>
-                <!-- /clients__map -->
-
-                <!-- clients__content -->
-                <div class="clients__content">
-
-                    <!-- showing-text -->
-                    <div class="showing-text">
-
-                        <!-- showing-text__item -->
-                        <div class="showing-text__item">
-                            <span>Our</span>
-                        </div>
-                        <!-- /showing-text__item -->
-
-                        <!-- showing-text__item -->
-                        <div class="showing-text__item">
-                            <span>clients</span>
-                        </div>
-                        <!-- /showing-text__item -->
-
-                    </div>
-                    <!-- /showing-text -->
-
-                    <!-- tabs -->
-                    <div class="tabs">
-
-                        <!-- tabs__controls -->
-                        <div class="tabs__controls">
-                            <span class="tabs__controls-slider"></span>
-                            <div class="tabs__controls-item"><span>B2B</span></div>
-                            <div class="tabs__controls-item"><span>B2C</span></div>
-                        </div>
-                        <!-- /tabs__controls -->
-
-                        <!-- tabs__content -->
-                        <div class="tabs__content">
-                            <div class="tabs__content-item">
-                                <ul>
-                                    <li>Financial companies (credits, loans, banks)</li>
-                                    <li>Aviation (private jet rentals, flight schools SAAS)</li>
-                                    <li>Food industry (food producers and distributors)</li>
-                                    <li>Real Estate (RE investments, RE information services)</li>
-                                    <li>Jewelry and precious stones</li>
-                                    <li>Healthcare</li>
-                                </ul>
-                            </div>
-                            <div class="tabs__content-item">
-                                <p>Lorem ipsum Lorem ipsum Loem ipsum</p>
-                                <p>Lorem ipsum Lorem ipsum Loem ipsum</p>
-                                <p>Lorem ipsum Lorem ipsum Loem ipsum</p>
-                                <p>Lorem ipsum Lorem ipsum Loem ipsum</p>
-                                <p>Lorem ipsum Lorem ipsum Loem ipsum</p>
-                            </div>
-                        </div>
-                        <!-- /tabs__content -->
-
-                    </div>
-                    <!-- /tabs -->
-
-                    <a href="#" class="btn"><span>SEE OUR WORK</span></a>
-
-                </div>
-                <!-- /clients__content -->
-
-            </section>
-            <!-- /clients -->
-
-            <!-- testimonials -->
-            <div class="testimonials">
-
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item">
-
-                                <!-- testimonials__ava -->
-                                <span class="testimonials__ava">
-                                <img src="pic/ava1.png" alt="">
-                            </span>
-                                <!-- /testimonials__ava -->
-
-                                <p>Extremely happy to work with Artem and his team. They are reliable, quick to resond and
-                                    always put extra thought in all of our common projects.</p>
-
-                                <!-- testimonials__name -->
-                                <strong class="testimonials__name">Joe Leo</strong>
-                                <!-- /testimonials__name -->
-
-                                <!-- testimonials__position -->
-                                <div class="testimonials__position">
-                                    CEO @ DefMethod
-                                    <span>New York, NY</span>
-                                </div>
-                                <!-- /testimonials__position -->
-
-                            </div>
-                            <!-- /testimonials__item -->
-
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/2)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/3)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/4)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/5)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/6)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/7)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/8)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/9)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- testimonials__item -->
-                            <div class="testimonials__item" style="background-image:url(http://lorempixel.com/600/600/nature/10)">
-
-                            </div>
-                            <!-- /testimonials__item -->
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-
-
-            </div>
-            <!-- /testimonials -->
 
             <!-- contact-us -->
             <div class="contact-us">
@@ -766,7 +716,7 @@
 
 
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
-    <script src="js/vendors/swiper.jquery.min.js"></script>
+    <script src="js/vendors/isotope.js"></script>
     <script src="js/vendors/ScrollToPlugin.min.js"></script>
     <script src="js/vendors/TweenMax.min.js"></script>
     <script src="js/index.min.js"></script>

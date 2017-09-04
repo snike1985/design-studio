@@ -9,6 +9,8 @@
 
   &__title {
     display: block;
+    position: relative;
+    z-index: 2;
     margin-bottom: 30px;
     color: #3F4551;
     font-size: 5vh;
@@ -21,6 +23,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &__filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 23px;
+    @include subtitle-bold();
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      min-width: 38px;
+      padding: 3px 7px;
+      margin: 0 5px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      background-color: rgba(63,69,81,.2);
+      transition: background-color .3s ease-in-out;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover,
+      &.active { background-color: #0200FF }
+    }
   }
 
   &__item {
@@ -72,6 +103,46 @@
         transition-delay: .2s;
       }
     }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      padding: 19px 25px;
+      background-color: #fff;
+    }
+
+    &-text {
+      color: #3F4551;
+      font-size: 12px;
+      line-height: 15px;
+      @include subtitle-medium();
+    }
+
+    &-data {
+      display: flex;
+      flex-wrap: wrap;
+      color: #FFFFFF;
+      font-size: 14px;
+      line-height: 23px;
+      @include title();
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        min-width: 38px;
+        padding: 3px 7px;
+        margin: 0 5px;
+        border-radius: 100px;
+        background-color: rgba(63,69,81,.2);
+      }
+    }
   }
 }
 @media (min-width: $phone-landscape) {
@@ -94,6 +165,20 @@
     margin: 0 auto 100px;
     padding: 100px 0 0 0;
     text-align: left;
+
+    &.works_isotope {
+
+      .works__item {
+        top: 0;
+        transform: translate(0, -32px);
+        margin-bottom: 55px;
+
+        &:nth-child(even) {
+          top: 0;
+          transform: translate(55px, 55px)
+        }
+      }
+    }
 
     &__title {
       position: absolute;

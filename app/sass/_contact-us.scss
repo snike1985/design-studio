@@ -47,6 +47,7 @@
       line-height: 16px;
       text-align: center;
       box-sizing: border-box;
+      border-radius: 0;
       @include subtitle-bold();
 
       &::-webkit-input-placeholder {

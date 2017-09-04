@@ -65,12 +65,11 @@
 
   &__close {
     position: absolute;
-    top: 54px;
-    right: 54px;
-    height: 22px;
-    width: 22px;
+    top: 48px;
+    right: 50px;
+    height: 30px;
+    width: 30px;
     z-index: 3;
-    transition: box-shadow .3s ease-in-out;
     cursor: pointer;
 
     &:before,
@@ -78,9 +77,9 @@
       position: absolute;
       left: 0;
       width: 100%;
-      height: 2px;
+      height: 3px;
       border-radius: 1px;
-      background-color: #3F4551;
+      background-color: #C9CED8;
       transition: all .3s ease-in-out;
       transform-origin: center;
       content: '';
@@ -102,7 +101,7 @@
   }
 
   &__wrap {
-    overflow: hidden;
+    overflow-y: auto;
     position: absolute;
     top: 0;
     right: 0;
@@ -121,7 +120,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 0 auto;
+    margin-bottom: 20px;
     @include title();
 
     &-item {
@@ -132,7 +131,6 @@
       font-size: 5vh;
       line-height: 9vh;
       text-transform: uppercase;
-      transition: color .3s ease-in-out;
 
       &:after {
         position: absolute;
@@ -146,8 +144,6 @@
         content: '';
       }
 
-      &:hover { color: #0200FF }
-
       span {
         position: relative;
         top: 1.5em;
@@ -157,6 +153,7 @@
   }
 
   &__range {
+    padding: 6px 0 32px;
     text-align: center;
     color: #AAABAF;
     font-size: 30px;
@@ -167,9 +164,50 @@
     }
   }
 
+  &__radio {
+    padding: 25px 0;
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
   &__form {
+    color: #3F4551;
+    font-size: 12px;
+    line-height: 16px;
 
+    .wpcf7-list-item-label { display: none }
 
+    input[type=text],
+    input[type=email] {
+      height: 27px;
+      width: 100%;
+      margin-bottom: 15px;
+      border-color: #979797;
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      color: #3F4551;
+      background: transparent;
+      font-size: 12px;
+      line-height: 16px;
+      box-sizing: border-box;
+      border-radius: 0;
+      @include main-font();
+
+      &::-webkit-input-placeholder {
+        color: #AAABAF;
+      }
+      &::-moz-placeholder {
+        color: #AAABAF;
+      }
+      &:-ms-input-placeholder {
+        color: #AAABAF;
+      }
+      &:-moz-placeholder {
+        color: #AAABAF;
+      }
+    }
 
     input[type=submit] {
       display: none;
@@ -187,7 +225,7 @@
     $thumb-width: 40px !default;
 
     $track-width: 100% !default;
-    $track-height: 12px !default;
+    $track-height: 10px !default;
 
     $track-radius: 6px !default;
     $contrast: 5% !default;
@@ -202,6 +240,7 @@
     @mixin thumb {
       background: $thumb-color url(../img/range-thumb.svg) no-repeat center;
       background-size: contain;
+      border: 1px solid $thumb-color;
       border-radius: $thumb-radius;
       cursor: pointer;
       height: $thumb-height;
@@ -303,15 +342,27 @@
     }
 
     &__title {
+      margin-bottom: 50px;
 
       &-item {
-        margin-bottom: 10px;
-        font-size: 48px;
+        font-size: 66px;
         line-height: 67px;
       }
     }
 
-    &__wrap { padding: 57px 60px 51px }
+    &__wrap { padding: 144px 125px 51px 139px }
+
+    &__form {
+      font-size: 16px;
+      line-height: 25px;
+
+      input[type=text],
+      input[type=email] {
+        margin-bottom: 29px;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
   }
 }
 /*---------- /request ---------*/

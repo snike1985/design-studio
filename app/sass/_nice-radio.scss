@@ -1,16 +1,17 @@
 .nice-radio {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   user-select: none;
+  margin-bottom: 8px;
 
   input[ type = radio ] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
 
     &:checked + label {
+      color: #3F4551;
 
       &:before {
-        display: block;
+        opacity: 1;
       }
 
     }
@@ -23,39 +24,35 @@
   }
   label {
     position: relative;
-    display: flex;
     text-align: left;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     height: 20px;
-    padding-left: 25px;
-    color: $nice-radio-color;
+    padding-left: 31px;
+    color: #AAABAF;
     cursor: pointer;
+    transition: color .3s ease-in-out;
 
     &:after,
     &:before {
-      position: absolute;
+      @include absoluteCenterY();
       border-radius: 50%;
+      box-sizing: border-box;
       content: '';
     }
 
     &:after {
-      top: 0;
       left: 0;
-      width: 15px;
-      height: 15px;
-      border: 2px solid $nice-radio-after-color;
+      height: 18px;
+      width: 18px;
+      border: 1px solid #3F4551;
     }
 
     &:before {
-      display: none;
-      top: 7px;
-      left: 7px;
-      background: $nice-radio-after-color;
-      width: 5px;
-      height: 5px;
-      content: '';
+      opacity: 0;
+      left: 5px;
+      height: 8px;
+      width: 8px;
+      background-color: #0200FF;
+      transition: opacity .3s ease-in-out;
     }
 
   }
