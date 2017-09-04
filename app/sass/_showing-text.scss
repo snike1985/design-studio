@@ -16,7 +16,7 @@
 
     @for $i from 0 through 5 {
       .showing-text__item:nth-child(#{$i}) span {
-        transition: top .3s cubic-bezier(0.4, 0, 0.2, 1) (.5s + .2s * $i);
+        transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1) (.5s + .2s * $i);
       }
     }
 
@@ -54,7 +54,8 @@
 
     span {
       position: relative;
-      transform: translate(0, 100%);
+      display: block;
+      transform: translate(0, 1.5em);
       transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }

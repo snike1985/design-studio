@@ -1,0 +1,40 @@
+/*---------- be-friends ----------*/
+.be-friends {
+  padding: 84px 0;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-bottom: 55px;
+    color: #3F4551;
+    font-size: 66px;
+    line-height: 67px;
+    @include title();
+  }
+
+  .social {
+    justify-content: center;
+  }
+}
+@media (min-width: $phone-landscape) {
+  .be-friends {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .be-friends {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .be-friends {
+
+  }
+}
+@media (min-width: $desktop) {
+  .be-friends {
+
+  }
+}
+/*---------- /be-friends ---------*/
+

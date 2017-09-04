@@ -3,8 +3,20 @@
 
     $(function(){
 
+        $('.contact-us').each( function() {
+            new ContactUs( $(this) );
+        } );
+
         $('.menu').each( function() {
             new Menu( $(this) );
+        } );
+
+        $('.request').each( function() {
+            new Request( $(this) );
+        } );
+
+        $('.site').each( function() {
+            new Site( $(this) );
         } );
 
         $('.show').each( function() {
@@ -24,6 +36,38 @@
         } );
 
     });
+
+    var ContactUs = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _form = _obj.find( '.contact-us__form' ),
+            _submit = _obj.find( 'input[type=submit]' ),
+            _btn = document.createElement('div');
+
+        //private methods
+        var _addEvents = function() {
+
+                $('.contact-us__form .btn').on({
+                    'click': function () {
+                        _form.trigger('submit');
+                    }
+                });
+
+            },
+            _init = function() {
+                _btn.className = 'btn';
+                _btn.innerHTML = '<span>Send</span>';
+                _submit.after(_btn);
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Menu = function(obj) {
 
@@ -49,6 +93,217 @@
         //public properties
 
         //public methods
+
+        _init();
+    };
+
+    var Request = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _btnOpen = $( '.request-btn' ),
+            _btnClose = _obj.find( '.request__close' ),
+            _range = _obj.find('input.wpcf7-range'),
+        _curValue = document.createElement('div');
+
+        //private methods
+        var _addEvents = function() {
+
+                _btnOpen.on({
+                    'click': function() {
+
+                        _obj.addClass('open');
+                    }
+                });
+
+                _btnClose.on({
+                    'click': function() {
+
+                        _obj.removeClass('open');
+                    }
+                });
+
+                _range.on({
+                    'input': function() {
+                        var currentValue = this.value;
+                        _changeValue(currentValue);
+                    }
+                });
+
+                _range.on({
+                    'change': function() {
+                        var currentValue = this.value;
+                        _changeValue(currentValue);
+                    }
+                });
+
+            },
+            _changeValue = function (val) {
+                _curValue.innerHTML = val.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
+            },
+            _init = function() {
+                _curValue.className = 'request__range';
+                _curValue.innerHTML = '';
+                _range.after(_curValue);
+                _changeValue(((_range.attr('max') - _range.attr('min'))/2).toString());
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Site = function(obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _window = $( window ),
+            _canUseSmoothScroll = true;
+
+        //private methods
+        var _addEvents = function() {
+
+                _window.on( {
+                    'scroll': function() {
+
+                        var scrollTop = $(window).scrollTop();
+
+                        _move( scrollTop );
+
+                    },
+                    'load': function() {
+
+                        var scrollTop = $(window).scrollTop();
+
+                        _move( scrollTop );
+
+                    },
+                    'mousewheel': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+
+                        }
+                    },
+                    'DOMMouseScroll': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+
+                        }
+                    }
+                } );
+
+            },
+            _move = function( scrollTop ){
+
+                $('.works__item').each( function (i) {
+                    var elem = $(this),
+                        koef = .05;
+
+                    if ( i % 2 == 0 ) {
+                        koef = -koef;
+                    }
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koef + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koef + 'px )'
+                    } );
+                } );
+
+                $('.works__title').each( function () {
+                    var elem = $(this),
+                        koef = .1;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koef + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koef + 'px )'
+                    } );
+                } );
+
+                $('.hero__gadgets').each( function () {
+                    var elem = $(this),
+                        koef = .2;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koef + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koef + 'px )'
+                    } );
+                } );
+
+                $('.hero__list').each( function () {
+                    var elem = $(this),
+                        koef = -.1;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koef + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koef + 'px )'
+                    } );
+                } );
+
+                $('.hero__layout').each( function () {
+                    var elem = $(this),
+                        koef = -.07;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + scrollTop * koef + 'px )',
+                        'transform': 'translate( 0px, ' + scrollTop * koef + 'px )'
+                    } );
+                } );
+
+                $('.doing__head-list').each( function () {
+                    var elem = $(this),
+                        koefX = .04,
+                        koefY = .07;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( ' + scrollTop * koefX + 'px, ' + scrollTop * koefY + 'px )',
+                        'transform': 'translate( ' + scrollTop * koefX + 'px, ' + scrollTop * koefY + 'px )'
+                    } );
+                } );
+
+                $('.circle').each( function () {
+                    var elem = $(this),
+                        koefX = .1,
+                        koefY = .3;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( ' + scrollTop * koefX + 'px, ' + scrollTop * koefY + 'px )',
+                        'transform': 'translate( ' + scrollTop * koefX + 'px, ' + scrollTop * koefY + 'px )'
+                    } );
+                } );
+
+            },
+            _siteScroll = function( event ) {
+                var scrollTime = .5,
+                    scrollDistance = 125,
+                    delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3,
+                    scrollTop = _window.scrollTop(),
+                    finalScroll = scrollTop - parseInt( delta * scrollDistance );
+
+                TweenMax.to( _window, scrollTime, {
+                    scrollTo : { y: finalScroll, autoKill:true },
+                    ease: Power1.easeOut,
+                    overwrite: 5
+                });
+            },
+            _init = function() {
+                _obj[ 0 ].obj = _self;
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+        _self.setCanUseScroll = function ( param ) {
+            _canUseSmoothScroll = param;
+        };
 
         _init();
     };
@@ -239,14 +494,24 @@
             _initSlider = function() {
                 _swiper = new Swiper(_slider, {
                     pagination: _pagination,
+                    // slidesPerView: 3,
+                    // paginationClickable: true,
+                    // centeredSlides: true,
+                    // grabCursor: true,
+                    // // virtualTranslate: true,
+                    // loop: true,
+                    // // longSwipes: false,
+                    // // followFinger: false,
+                    // spaceBetween: -300
                     effect: 'coverflow',
+                    grabCursor: true,
                     centeredSlides: true,
                     loop: true,
                     slidesPerView: 'auto',
                     coverflow: {
-                        rotate: 0,
-                        stretch: 500,
-                        depth: 5,
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
                         modifier: 1,
                         slideShadows : false
                     }

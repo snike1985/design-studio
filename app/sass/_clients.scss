@@ -32,7 +32,11 @@
   &__map {
     position: relative;
     height: 67.66055vw;
-    background-color: #ccc;
+
+    > img {
+      display: block;
+      height: 100%;
+    }
 
     &-point {
       position: absolute;
@@ -160,7 +164,6 @@
       right: 0;
       height: 519px;
       width: 872px;
-      background-color: #ccc;
 
       &-point {
         position: absolute;

@@ -1,0 +1,318 @@
+/*---------- request ----------*/
+.request {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: 1;
+  transition: width .3s linear .3s;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    content: '';
+    background-color: rgba(2,0,255,0.7);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(100%, 0);
+    transition-delay: .2s;
+    backface-visibility: hidden;
+  }
+
+  &.open {
+    width: 100%;
+    transition-delay: 0s;
+
+    &:before {
+      transform: translate(0);
+      transition-delay: 0s;
+    }
+
+    .request__wrap {
+      transform: translate(0);
+      transition-delay: .2s;
+    }
+
+    .request__title {
+
+      @for $i from 0 through 5 {
+        .request__title-item:nth-child(#{$i}):after {
+          transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1) (.3s + .05s * $i), opacity .3s ease-in-out (.7s + .05s * $i);
+        }
+      }
+
+      @for $i from 0 through 5 {
+        .request__title-item:nth-child(#{$i}) span {
+          transition: top .3s cubic-bezier(0.4, 0, 0.2, 1) (.5s + .05s * $i);
+        }
+      }
+
+      &-item {
+
+        &:after {
+          transform: translate(0);
+          opacity: 0;
+        }
+
+        span { top: 0 }
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 54px;
+    right: 54px;
+    height: 22px;
+    width: 22px;
+    z-index: 3;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #3F4551;
+      transition: all .3s ease-in-out;
+      transform-origin: center;
+      content: '';
+    }
+    &:before {
+      bottom: calc(50% - 1px);
+      transform: rotate(45deg);
+    }
+    &:after {
+      top: calc(50% - 1px);
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+
+      &:before,
+      &:after { background-color: #0200FF }
+    }
+  }
+
+  &__wrap {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    min-width: 280px;
+    max-width: 668px;
+    height: 100%;
+    z-index: 2;
+    padding: 23px 30px;
+    background-color: #fff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(100%, 0);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    @include title();
+
+    &-item {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      color: #293A5A;
+      font-size: 5vh;
+      line-height: 9vh;
+      text-transform: uppercase;
+      transition: color .3s ease-in-out;
+
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #293A5A;
+        transform: translate(100%, 0);
+        transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s ease-in-out;
+        content: '';
+      }
+
+      &:hover { color: #0200FF }
+
+      span {
+        position: relative;
+        top: 1.5em;
+        transition: top .3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+
+  &__range {
+    text-align: center;
+    color: #AAABAF;
+    font-size: 30px;
+    line-height: 46px;
+
+    &:before {
+      content: '$';
+    }
+  }
+
+  &__form {
+
+
+
+    input[type=submit] {
+      display: none;
+    }
+
+    .btn {
+      margin-top: 15px;
+    }
+
+    $track-color: rgba(63,69,81,.1) !default;
+    $thumb-color: #0200FF !default;
+
+    $thumb-radius: 20px !default;
+    $thumb-height: 40px !default;
+    $thumb-width: 40px !default;
+
+    $track-width: 100% !default;
+    $track-height: 12px !default;
+
+    $track-radius: 6px !default;
+    $contrast: 5% !default;
+
+    @mixin track {
+      cursor: pointer;
+      height: $track-height;
+      transition: all .2s ease;
+      width: $track-width;
+    }
+
+    @mixin thumb {
+      background: $thumb-color url(../img/range-thumb.svg) no-repeat center;
+      background-size: contain;
+      border-radius: $thumb-radius;
+      cursor: pointer;
+      height: $thumb-height;
+      width: $thumb-width;
+    }
+
+    [type='range'] {
+      -webkit-appearance: none;
+      margin: $thumb-height / 2 0;
+      width: $track-width;
+
+      &:focus {
+        outline: 0;
+
+        &::-webkit-slider-runnable-track {
+          background: lighten($track-color, $contrast);
+        }
+
+        &::-ms-fill-lower {
+          background: $track-color;
+        }
+
+        &::-ms-fill-upper {
+          background: lighten($track-color, $contrast);
+        }
+      }
+
+      &::-webkit-slider-runnable-track {
+        @include track;
+        background: $track-color;
+        border-radius: $track-radius;
+      }
+
+      &::-webkit-slider-thumb {
+        @include thumb;
+        -webkit-appearance: none;
+        margin-top: (($track-height) / 2) - ($thumb-height / 2);
+      }
+
+      &::-moz-range-track {
+        @include track;
+        background: $track-color;
+        border-radius: $track-radius;
+      }
+
+      &::-moz-range-thumb {
+        @include thumb;
+      }
+
+      &::-ms-track {
+        @include track;
+        background: transparent;
+        border-color: transparent;
+        border-width: ($thumb-height / 2) 0;
+        color: transparent;
+      }
+
+      &::-ms-fill-lower {
+        background: darken($track-color, $contrast);
+        border-radius: $track-radius * 2;
+      }
+
+      &::-ms-fill-upper {
+        background: $track-color;
+        border-radius: $track-radius * 2;
+      }
+
+      &::-ms-thumb {
+        @include thumb;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $phone-landscape) {
+  .request {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .request {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .request {
+
+  }
+}
+@media (min-width: $desktop) {
+  .request {
+
+    &__close {
+
+      span {
+
+      }
+    }
+
+    &__title {
+
+      &-item {
+        margin-bottom: 10px;
+        font-size: 48px;
+        line-height: 67px;
+      }
+    }
+
+    &__wrap { padding: 57px 60px 51px }
+  }
+}
+/*---------- /request ---------*/
+

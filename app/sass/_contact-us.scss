@@ -1,0 +1,126 @@
+/*---------- contact-us ----------*/
+.contact-us {
+  padding: 0 20px;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-bottom: 12px;
+    color: #3F4551;
+    font-size: 18px;
+    line-height: 22px;
+    @include subtitle-bold();
+
+    span {
+      display: block;
+      color: #0200FF;
+      font-size: 85px;
+      line-height: 85px;
+      text-transform: uppercase;
+      @include title();
+    }
+  }
+
+  p {
+    color: #3F4551;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  &__form {
+    max-width: 404px;
+    margin: 0 auto;
+    padding: 35px 0;
+
+    input[type=text],
+    input[type=email] {
+      height: 27px;
+      width: 100%;
+      margin-bottom: 15px;
+      border-color: #979797;
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      color: #3F4551;
+      background: transparent;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      box-sizing: border-box;
+      @include subtitle-bold();
+
+      &::-webkit-input-placeholder {
+        color: #AAABAF;
+      }
+      &::-moz-placeholder {
+        color: #AAABAF;
+      }
+      &:-ms-input-placeholder {
+        color: #AAABAF;
+      }
+      &:-moz-placeholder {
+        color: #AAABAF;
+      }
+    }
+
+    input[type=submit] {
+      display: none;
+    }
+
+    .btn {
+      margin-top: 15px;
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .contact-us {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .contact-us {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .contact-us {
+
+  }
+}
+@media (min-width: $desktop) {
+  .contact-us {
+    padding: 0;
+
+    &__title {
+      font-size: 24px;
+      line-height: 27px;
+
+      span {
+        font-size: 172px;
+        line-height: 176px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    &__form {
+      padding: 70px 0;
+
+      input[type=text],
+      input[type=email] {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      .btn {
+        margin-top: 29px;
+      }
+    }
+  }
+}
+/*---------- /contact-us ---------*/
+
