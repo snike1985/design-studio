@@ -386,15 +386,20 @@
         //private properties
         var _self = this,
             _obj = obj,
-            _window = $( window );
+            _window = $( window ),
+            _canCheckScroll = false;
 
         //private methods
         var _onEvents = function () {
                 _window.on({
-                    scroll: function () {
-
+                    'scroll': function () {
+                        if (_canCheckScroll) {
+                            _checkScroll();
+                        }
+                    },
+                    'load': function () {
+                        _canCheckScroll = true;
                         _checkScroll();
-
                     }
                 });
             },
@@ -416,7 +421,6 @@
             _init = function () {
                 _obj[ 0 ].obj = _self;
                 _onEvents();
-                _checkScroll();
             };
 
         //public properties
