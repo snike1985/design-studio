@@ -239,7 +239,12 @@
                         curKoef = .5;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
                     }
                 } );
 
@@ -255,7 +260,12 @@
                         }
 
                         if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                            if ( curTop < winHeight ) {
+                                _paralax( curElem, 0, scrollTop, curKoef);
+                            } else {
+                                _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                            }
                         }
                     }
                 } );
@@ -267,8 +277,14 @@
                         curKoef = .3;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                        }
                     }
                 } );
 
@@ -279,7 +295,12 @@
                         curKoef = .2;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
                     }
                 } );
 
@@ -290,7 +311,12 @@
                         curKoef = -.1;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
                     }
                 } );
 
@@ -301,7 +327,12 @@
                         curKoef = -.07;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
                     }
                 } );
 
@@ -312,7 +343,12 @@
                         curKoef = .04;
 
                     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                        _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
                     }
                 } );
 
@@ -539,17 +575,7 @@
                     paginationClickable: true,
                     centeredSlides: true,
                     loop: true,
-                    spaceBetween: -450,
-                    breakpoints: {
-                        1200: {
-                            slidesPerView: 3,
-                            spaceBetween: -250
-                        },
-                        768: {
-                            slidesPerView: 1,
-                            spaceBetween: 0
-                        }
-                    }
+                    spaceBetween: 0
                 });
 
             },
@@ -592,7 +618,28 @@
                             _items.removeClass('is-show');
                             _filterItems.removeClass('active');
                             curElem.addClass('active');
-                            _grid.isotope({ filter: curElem.data('filter') });
+
+                            var filterData = curElem.data('filter');
+                            _grid.isotope({ filter: filterData });
+
+                            _items.removeClass('odd');
+                            _items.removeClass('even');
+
+                            console.log(filterData);
+                            var count = 0;
+                            _items.each(function () {
+                                var curElem = $(this);
+
+                                if (curElem.hasClass(filterData.slice(1))) {
+                                    count++;
+
+                                    if ( count % 2 == 0 ) {
+                                        curElem.addClass('even');
+                                    } else {
+                                        curElem.addClass('odd');
+                                    }
+                                }
+                            });
                         }
                     }
                 });

@@ -10,9 +10,10 @@
   box-sizing: border-box;
   border: 99px solid #E2E3E4;
 
-  &.circle_2 {
-    top: 280vh;
-    left: 50vw;
+  &.circle_min {
+    width: 117px;
+    height: 117px;
+    border: 20px solid #E2E3E4;
   }
 }
 @media (min-width: $phone-landscape) {
